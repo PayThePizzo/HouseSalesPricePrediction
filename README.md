@@ -1,5 +1,36 @@
 # Prediction of House Prices' Sales
 
+Problem definition
+The problem definition works as the driving force for a data analysis plan execution.
+
+How can we assess the value of a house, or better, the sale price? The short answer is we cannot, since the database is not made for that. However, we can predict the log-error.
+
+logerror=log(Zestimate)−log(SalePrice) 
+
+Now, it is easier to understand what our real goal is: predicting a number through regression. This is something we know how to do!
+
+Understand the context: hosing-market in the west coast of the U.S.A.
+Other than finding links between features, we need to point out some factors we cannot easily include when making our predictions.
+
+We are given a "full list of real estate properties in three counties (Los Angeles, Orange and Ventura, California) data in 2016 and 2017", What problems are we facing now?
+
+We are focusing on a particular geographical area, which we are not familiar with;
+We are focusing on a market we have no prior domain-knowledge of;
+There is no price sale in the dataset.
+Therefore, we have not a clue of how the market is going for houses there, nor we know what gets a house to a particular sale price (the weight of each feature). While the first can be hardly tracked, we can find out about the latter two through data exploration and domain research.
+
+As we know, datasets rarely are perfect, so we must perform some magic to make it usable with our regression algorithms and find out useful information!
+
+Need for a clean & clear dataset
+What do we need to do to achieve a clean dataset?
+
+The following approac allows us to use a vast variety of cleaning and feature engineering strategies to converge to a perfect training dataset.
+
+Basic Exploration
+Data Cleaning & Feature Engineering
+Modeling
+Export
+However, we will not follow a linear approach. We will improve the quality of the dataset as soon as we have the chance
 
 ---
 
