@@ -1,44 +1,88 @@
-# Prediction of House Prices' Sales
-
-Problem definition
-The problem definition works as the driving force for a data analysis plan execution.
-
-How can we assess the value of a house, or better, the sale price? The short answer is we cannot, since the database is not made for that. However, we can predict the log-error.
-
-logerror=log(Zestimate)−log(SalePrice) 
-
-Now, it is easier to understand what our real goal is: predicting a number through regression. This is something we know how to do!
-
-Understand the context: hosing-market in the west coast of the U.S.A.
-Other than finding links between features, we need to point out some factors we cannot easily include when making our predictions.
-
-We are given a "full list of real estate properties in three counties (Los Angeles, Orange and Ventura, California) data in 2016 and 2017", What problems are we facing now?
-
-We are focusing on a particular geographical area, which we are not familiar with;
-We are focusing on a market we have no prior domain-knowledge of;
-There is no price sale in the dataset.
-Therefore, we have not a clue of how the market is going for houses there, nor we know what gets a house to a particular sale price (the weight of each feature). While the first can be hardly tracked, we can find out about the latter two through data exploration and domain research.
-
-As we know, datasets rarely are perfect, so we must perform some magic to make it usable with our regression algorithms and find out useful information!
-
-Need for a clean & clear dataset
-What do we need to do to achieve a clean dataset?
-
-The following approac allows us to use a vast variety of cleaning and feature engineering strategies to converge to a perfect training dataset.
-
-Basic Exploration
-Data Cleaning & Feature Engineering
-Modeling
-Export
-However, we will not follow a linear approach. We will improve the quality of the dataset as soon as we have the chance
+# Prediction Task: Home Value Prediction
 
 ---
 
-### Credits & Copyright
+## Data & Web Mining - Lab Project Statement
+
+### Prediction Task: Home Value Prediction
+
+The dataset is found [here](https://www.openml.org/search?type=data&status=active&id=43926&sort=runs)
+
+### To be delivered 
+
+1. One or more notebooks (and possibly other python files) and a 5-page pdf
+report discussing your critical choices. 
+    * No more than 5 pages! 
+    * The pdf report can be the export of a notebook.
+2. Project is discussed at the oral exam, about one week after the written exam.
+3. Deadline: a couple of days before the oral exam via Moodle.
+
+### Work to be done
+
+* Add custom features to your dataset (e.g., avg. prices in the same
+geographical area) and evaluate their contribution
+* Compare at least two prediction methods, after fine-tuning their parameters
+* Investigate instances with the most correct predictions and with the most
+wrong predictions. Do they have some peculiarities? Any strange feature
+distribution?
+* Experiment beyond scikit-learn, e.g., with LightGBM or XGBoost or CatBoost
+* Can be done in groups, multiply the work by the size of the group
+
+### Evaluation
+
+* Quality of the report
+* Quality of the code (I'll ask about every single line of code)
+* Depth of the analysis
+* Project can be insufficient (the exam is not passed), or it may add up to 3 points to the score of the written exam
+
+---
+
+## My Project Entry
+
+
+### Requirements for the project
+
+
+### Process
+
+Even though, ideally, the process of exploratory data analysis should leave the data untouched, I decided to perform changes whenever I had the chance to improve the quality of the data. This was crucial as the presence of outliers is very high and there is evidence of data incoherence. What I mean by this, is that even though it is believed that the best approach is to separate the *passive* analysis and the actual feature engineering phase, I personally believe it is possible to do both for each step. Namely, at any moment we can use the inference we make to modify the data in order to achieve the best version of the original dataset.
+
+### Structure of the notebooks
+
+The project has 5 notebooks:
+1. Introduction and Data Preparation
+    * Domain research, Context of Data
+    * Preliminary Dataset Overview
+    * Correction of possible errors and coherence check 
+    * Some preliminary feature creation
+2. Exploratory Data Analysis 
+    * Univariate, Bivariate and Multivariate analysis
+    * Outliers removal 
+3. Data Encoding, Type Conversion and Feature Selection
+    * Encoding of Categorical Features
+    * Conversion of all types
+    * Feature Importance Assessment
+    * Feature Selection
+4. Bagged Random Forest Regression
+    * Data Rescaling
+    * Train, Validation, Test
+    * Hyperparameters Tuning
+    * Diagnostics and Evaluation
+5. Graph Neural Network Regression
+    * Data conversion to graph and edges creation
+    * Data Rescaling
+    * Train, Validation and Test loops
+    * Diagnostics and Evaluation
+
+**Gianmaria Pizzo - 872966@stud.unive.it**
+
+---
+
+### Credits & References
 As we know from this guideline by [University of Michigan](https://guides.lib.umich.edu/c.php?g=282964&p=3285995), 
 there is no clear protocol on how to cite datasets. However, I will try my best 
 
-#### Data
+#### Dataset
 
     @article{OpenML2013,
       author = {Joaquin Vanschoren and Jan N. van Rijn and Bernd Bischl and Luis Torgo},
@@ -61,6 +105,8 @@ The dataset used was taken from [openml.org](https://www.openml.org/),  [https:/
 #### Images
 The background image of this repo was downloaded from [Wallpaper Flare](https://www.wallpaperflare.com/reflection-hallstattersee-alps-tourism-bad-goisern-town-wallpaper-tgifx/download/1280x640)
 and follows these [terms of usage](https://www.wallpaperflare.com/terms-of-use).
+
+---
 
 ##### Final Note
 All digital supports (such as images), are not of my property and are protected by the law on copyright.
